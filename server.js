@@ -1,8 +1,9 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-app.use(express.static(__dirname+'/dist/admin-portal'));
+
+app.use(express.static('./dist/admin-portal'));
 app.get('/*',function(req, res){
-    res.sendFile(path.join(__dirname+'dist/admin-portal/index.html'));
+    res.sendFile('index.html', {root: 'dist/admin-portal/'});
 });
-app.listen(process.env.PORT|| 8080);
+app.listen(process.env.PORT || 8080);
