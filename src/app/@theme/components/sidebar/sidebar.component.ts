@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 
 
@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   menuname : String = "dashboard";
+
+  scrHeight:any;
+  scrWidth:any;
+
   constructor() { 
     this.menuname = "dashboard";
   }
@@ -20,7 +24,22 @@ export class SidebarComponent implements OnInit {
     console.log(JSON.stringify(menu))
     this.menuname = menu;
 
+    if(this.scrWidth <= 768) {
+      const bd = document.querySelector('body');
+      if(bd.classList.contains('show-sidebar')){
+        bd.classList.remove("show-sidebar");
+      }
+    }
+
     console.log(JSON.stringify(this.menuname))
   }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+        this.scrHeight = window.innerHeight;
+        this.scrWidth = window.innerWidth;
+  }
+
+  
 
 }

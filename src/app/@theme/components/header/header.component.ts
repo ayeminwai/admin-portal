@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 declare var jQuery: any;
 
 @Component({
@@ -7,7 +7,8 @@ declare var jQuery: any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  scrHeight:any;
+  scrWidth:any;
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +25,13 @@ export class HeaderComponent implements OnInit {
     } else {
       bd.classList.add("show-sidebar");
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+        this.scrHeight = window.innerHeight;
+        this.scrWidth = window.innerWidth;
+        console.log(this.scrHeight, this.scrWidth);
   }
 
 }
