@@ -1,0 +1,24 @@
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+      <!-- Sidebar navigation-->
+      <nav class="sidebar-nav">
+        <ul id="sidebarnav">
+          <li [class.active]="menuname=== 'dashboard'"> <a class="waves-effect waves-dark" (click)="checkActive('dashboard')" routerLink="dashboard" aria-expanded="false"><i
+                class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
+          </li>
+          <li [class.active]="menuname === 'flights'"> <a class="waves-effect waves-dark" (click)="checkActive('flights')" routerLink="flights" aria-expanded="false"><i
+                class="fa fa-fighter-jet" ></i><span class="hide-menu">Flights</span></a>
+          </li>
+          <li [class.active]="menuname === 'stays'"> <a class="waves-effect waves-dark" (click)="checkActive('stays')" routerLink="stays" aria-expanded="false"><i
+                class="fa fa-bank"></i><span class="hide-menu">Stays</span></a>
+          </li>
+          <li [class.active]="menuname === 'carrental'"> <a class="waves-effect waves-dark" (click)="checkActive('carrental')" routerLink="car-rental" aria-expanded="false"><i
+                class="fa fa-car"></i><span class="hide-menu">Car Rental</span></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+  </aside>
