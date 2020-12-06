@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../core/services/session.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private session: SessionService) { 
+    session.removeUser();
+    session.logout();
+  }
 
   ngOnInit(): void {
   }

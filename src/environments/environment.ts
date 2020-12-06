@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  URL:"http://ec2-54-169-110-148.ap-southeast-1.compute.amazonaws.com:9091/CoreApi",
+  //URL:"http://ec2-54-169-110-148.ap-southeast-1.compute.amazonaws.com:9091/CoreApi",
+  //timezone:null
+  timezone:"Asia/Singapore"
 };
 
 /*
