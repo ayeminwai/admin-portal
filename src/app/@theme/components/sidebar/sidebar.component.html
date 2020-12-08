@@ -5,11 +5,26 @@
           <li [class.active]="menuname=== 'dashboard'"> <a class="waves-effect waves-dark" (click)="checkActive('dashboard')" routerLink="dashboard" aria-expanded="false"><i
                 class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
           </li>
-          <li [class.active]="menuname === 'flights'"> <a class="waves-effect waves-dark" (click)="checkActive('flights')" routerLink="flights" aria-expanded="false"><i
-                class="fa fa-users" ></i><span class="hide-menu">User Module</span></a>
+          <li [class.active]="menuname === 'usergroup'"> <a class="waves-effect waves-dark" (click)="checkActive('usergroup')" aria-expanded="false"><i
+                class="fa fa-users" ></i><span class="hide-menu">User Module</span><span class="pd-left-3 fa" [ngClass]="{ 'fa-caret-down' : menuname == 'usergroup', 'fa-caret-right': menuname != 'usergroup'}" ></span></a>
+            <ul id="sidebarnav" *ngIf="menuname === 'usergroup'">
+                  <li routerLink="flights"><a class="waves-effect waves-dark">User Information</a></li>
+            </ul>
           </li>
-          <li [class.active]="menuname === 'stays'"> <a class="waves-effect waves-dark" (click)="checkActive('stays')" routerLink="stays" aria-expanded="false"><i
-                class="fa fa-bank"></i><span class="hide-menu">Process Flow</span></a>
+          <li [class.active]="menuname === 'process'"> <a class="waves-effect waves-dark" (click)="checkActive('process')" aria-expanded="false"><i
+                class="fa fa-bank"></i><span class="hide-menu">Process</span><span class="pd-left-3 fa" [ngClass]="{ 'fa-caret-down' : menuname == 'process', 'fa-caret-right': menuname != 'process'}" ></span></a>
+            <ul id="sidebarnav" *ngIf="menuname === 'process'">
+                  <li routerLink="flights"><a class="waves-effect waves-dark">Morning Check-in</a></li>
+                  <li routerLink="flights"><a class="waves-effect waves-dark">Evening Check-in</a></li>
+            </ul>
+          </li>
+          <li [class.active]="menuname === 'logs'"> <a class="waves-effect waves-dark" (click)="checkActive('logs')" aria-expanded="false"><i
+            class="fa fa-bank"></i><span class="hide-menu">Logs</span><span class="pd-left-3 fa" [ngClass]="{ 'fa-caret-down' : menuname == 'logs', 'fa-caret-right': menuname != 'logs'}" ></span></a>
+            <ul id="sidebarnav" *ngIf="menuname === 'logs'">
+                  <li routerLink="flights"><a class="waves-effect waves-dark">Log Trigger</a></li>
+                  <li routerLink="flights"><a class="waves-effect waves-dark">Log Craving</a></li>
+                  <li routerLink="flights"><a class="waves-effect waves-dark">Log Feelings</a></li>
+            </ul>
           </li>
           <li [class.active]="menuname === 'carrental'"> <a class="waves-effect waves-dark" (click)="checkActive('carrental')" routerLink="car-rental" aria-expanded="false"><i
                 class="fa fa-gear"></i><span class="hide-menu">Setup</span></a>

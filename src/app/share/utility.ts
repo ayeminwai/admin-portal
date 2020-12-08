@@ -63,7 +63,7 @@ export class Utility {
 
     convertTZ(date: Date, local: string) {
         if(local)
-            return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", { timeZone: "Asia/Singapore" }));
+            return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", { timeZone: local }));
         else
             return new Date();
     }

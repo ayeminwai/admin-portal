@@ -21,7 +21,6 @@ export class SidebarComponent implements OnInit {
   }
 
   checkActive(menu : string) {
-    console.log(JSON.stringify(menu))
     this.menuname = menu;
 
     if(this.scrWidth <= 768) {
@@ -30,8 +29,6 @@ export class SidebarComponent implements OnInit {
         bd.classList.remove("show-sidebar");
       }
     }
-
-    console.log(JSON.stringify(this.menuname))
   }
 
   @HostListener('window:resize', ['$event'])

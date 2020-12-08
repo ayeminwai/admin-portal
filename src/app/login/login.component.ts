@@ -36,11 +36,12 @@ export class LoginComponent implements OnInit {
   }
 
   dateTesting(){
-    console.log(JSON.stringify(this._util.getSystemDate("local")));
-    console.log(JSON.stringify(this._util.getSystemDate(null)));
+    console.log(JSON.stringify(this._util.getSystemDate("Asia/Singapore")));
+    console.log(JSON.stringify(this._util.getSystemDate("Etc/UTC")));
   }
 
   oauth() {
+    this.dateTesting();
     if (this.isValid()) {
       this.http.login(this.user.name, SHA256(this.user.password).toUpperCase()).subscribe(
         data => {

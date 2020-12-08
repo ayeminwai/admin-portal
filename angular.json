@@ -42,7 +42,6 @@
               "src/assets/js/sidebarmenu.js",
               "src/assets/js/custom.min.js",
               "node_modules/raphael/raphael.min.js",
-              "node_modules/c3/c3.min.js",
               "src/assets/js/dashboard1.js",
               "src/assets/js/sha.js"
             ]
