@@ -67,4 +67,24 @@ export class Utility {
         else
             return new Date();
     }
+
+    getScreenResize(jQuery:any){
+        var width = (window.innerWidth > 0) ? window.innerWidth : window.screen.width;
+        var topOffset = 0;
+        if (width < 1170) {
+          jQuery("body").addClass("mini-sidebar");
+          jQuery('.navbar-brand span').hide();
+          jQuery(".sidebartoggler i").addClass("ti-menu");
+        } else {
+          jQuery("body").removeClass("mini-sidebar");
+          jQuery('.navbar-brand span').show();
+        }
+    
+        var height = ((window.innerHeight > 0) ? window.innerHeight : window.screen.height) - 1;
+        height = height - topOffset;
+        if (height < 1) height = 1;
+        if (height > topOffset) {
+          jQuery(".page-wrapper").css("min-height", (height) + "px");
+        }
+    }
 }

@@ -14,9 +14,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    jQuery(document).ready(function(e) {
-      
-    });
   }
 
   clickToggle(){
